@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+    <!-- ==========================================
+         ENCABEZADO DEL DOCUMENTO (HEAD)
+         Configuración de metadatos y enlace a CSS
+         ========================================== -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kyoto Dojo | Menú Digital</title>
+       
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    
+    <body>
+        <!-- ==========================================
+             SECCIÓN DE NAVEGACIÓN Y ENCABEZADO (HEADER)
+             ========================================== -->
+        <header>
+            <!-- Barra superior con contacto y logo -->
+            <div class="container-hero">
+                <div class="container hero">
+                    <div class="customer-support">
+                        <span class="icon">&#9742;</span>
+                        <div class="content-customer-support">
+                            <span class="text">Llámanos</span>
+                            <span class="number">555-KIOTO-SUSHI</span>
+                        </div>
+                    </div>
+
+                    <div class="container-logo">
+                        
+                        <h1 class="logo"><a href="#inicio">Kyoto Dojo</a></h1>
+                    </div>
+
+                    <div class="container-user">
+                        <span class="icon">&#128100;</span>
+                        <span class="icon">&#128722;</span>
+                        <div class="content-shopping-cart">
+                            <span class="text">Pedido</span>
+                            <span class="number">(0)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menú de Navegación Principal -->
+            <div class="container-navbar">
+                <nav class="navbar container">
+                    <span class="icon">&#9776;</span>
+                    <!-- Lista de enlaces a las secciones requeridas -->
+                    <ul class="menu">
+                        <li><a href="#inicio">Inicio</a></li> <!-- Menú Principal -->
+                        
+                        <!-- Submenú para Comida -->
+                        <li class="dropdown-menu">
+                            <a href="#platos">Menú Comida</a>
+                            <ul class="submenu">
+                                <li><a href="#platos">Platos Principales</a></li>
+                                <li><a href="#paquetes">Paquetes</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li><a href="#bebidas">Bebidas</a></li>
+                        <li><a href="#postres">Postres</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#promociones">Promociones</a></li>
+                    </ul>
+
+                    <!-- Formulario de búsqueda -->
+                    <form class="search-form" action="#" method="get">
+                        <input type="search" name="q" placeholder="Buscar..." />
+                        <button class="btn-search" type="submit">
+                            <span class="icon">&#128269;</span>
+                        </button>
+                    </form>
+                </nav>
+            </div>
+        </header>
+
+        <!-- ==========================================
+             SECCIÓN: MENÚ PRINCIPAL (INICIO)
+             Información básica del restaurante
+             ========================================== -->
+        <section id="inicio" class="banner">
+            <div class="content-banner">
+                <p>El Auténtico Sabor de Japón</p>
+                <h2>Sushi, Ramen y <br />Experiencia Única</h2>
+                <a href="#platos">Ver Menú</a>
+            </div>
+        </section>
+
+        <!-- Contenedor principal del contenido -->
+        <main class="main-content">
+            
+            <!-- Características / Beneficios -->
+            <section class="container container-features">
+                <div class="card-feature">
+                    <span class="icon">&#127869;</span>
+                    <div class="feature-content">
+                        <span>Ingredientes Frescos</span>
+                        <p>Del mar a tu mesa</p>
+                    </div>
+                </div>
+                <div class="card-feature">
+                    <span class="icon">&#128105;&#8205;&#127859;</span>
+                    <div class="feature-content">
+                        <span>Maestros Sushi</span>
+                        <p>Técnica tradicional</p>
+                    </div>
+                </div>
+                <div class="card-feature">
+                    <span class="icon">&#128663;</span>
+                    <div class="feature-content">
+                        <span>Delivery Rápido</span>
+                        <p>Llega caliente/fresco</p>
+                    </div>
+                </div>
+                <div class="card-feature">
+                    <span class="icon">&#128205;</span>
+                    <div class="feature-content">
+                        <span>Visítanos</span>
+                        <p>Abierto todos los días</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SECCIÓN: PLATOS PRINCIPALES
+                 Incluye imagen, descripción, medidas y precio
+                 ========================================== -->
+            <section id="platos" class="container top-products">
+                <h1 class="heading-1">🍜 Platos Principales</h1>
+
+                <!-- Filtros visuales -->
+                <div class="container-options">
+                    <span class="active">Todos</span>
+                    <span>Sushi</span>
+                    <span>Ramen</span>
+                </div>
+
+                <div class="container-products">
+                    <!-- Producto: Sushi -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="kyoto.png" alt="Rollo de Sushi" />
+                            <span class="discount">-15%</span>
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-regular">&#9734;</span>
+                            </div>
+                            <h3>Kyoto Roll</h3>
+                            <p class="description-size">Salmón, Aguacate, Queso Crema</p>
+                            <!-- Medidas -->
+                            <div class="sizes">
+                                <span>Chico (6 pzas)</span>
+                                <span>Mediano (10 pzas)</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$85 <span>$100.00</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Producto: Ramen -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="ramen.png" alt="Bowl de Ramen" />
+                            <span class="discount">-10%</span>
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span>
+                            </div>
+                            <h3>Shoyu Ramen</h3>
+                            <p class="description-size">Fideo en Caldo de Soya, Cerdo Chashu</p>
+                            <!-- Medidas -->
+                            <div class="sizes">
+                                <span>Mediano</span>
+                                <span>Grande</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$120 <span>$150</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SECCIÓN: BEBIDAS
+                 ========================================== -->
+            <section id="bebidas" class="container top-products">
+                <h1 class="heading-1">🍹 Bebidas Japonesas</h1>
+                <div class="container-products">
+                    
+                    <!-- Bebida 1 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="matcha.png" alt="Bebida Matcha" />
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span>
+                            </div>
+                            <h3>Matcha Latte</h3>
+                            <p class="description-size">Té verde ceremonial japonés</p>
+                            <div class="sizes">
+                                <span>Chico</span>
+                                <span>Grande</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$49</p>
+                        </div>
+                    </div>
+
+                    <!-- Bebida 2 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="ramune.jpg" alt="Bebida Ramune" /> 
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-regular">&#9734;</span>
+                            </div>
+                            <h3>Ramune Soda</h3>
+                            <p class="description-size">Refresco gaseoso japonés con canica</p>
+                            <div class="sizes">
+                                <span>Original</span>
+                                <span>Fresa</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$55</p>
+                        </div>
+                    </div>
+
+                    <!-- Bebida 3 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="sake.png" alt="Botella de Sake" /> <span class="discount">-5%</span>
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span>
+                            </div>
+                            <h3>Sake Premium</h3>
+                            <p class="description-size">Licor de arroz tradicional</p>
+                            <div class="sizes">
+                                <span>Tokkuri (Jarra)</span>
+                                <span>Botella</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$180</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SECCIÓN: POSTRES
+                 ========================================== -->
+            <section id="postres" class="container top-products">
+                <h1 class="heading-1">🍰 Postres Tradicionales</h1>
+                <div class="container-products">
+                    
+                    <!-- Postre 1 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="mochis.png" alt="Postre Mochis" />
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-regular">&#9734;</span>
+                            </div>
+                            <h3>Mochis Helados</h3>
+                            <p class="description-size">Masa de arroz rellena de helado</p>
+                            <div class="sizes">
+                                <span>3 piezas</span>
+                                <span>6 piezas</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$60</p>
+                        </div>
+                    </div>
+
+                    <!-- Postre 2 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="taiyaki.png" alt="Postre Taiyaki" /> 
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span>
+                            </div>
+                            <h3>Taiyaki</h3>
+                            <p class="description-size">Waffle forma de pez, relleno dulce</p>
+                            <div class="sizes">
+                                <span>Frijol Rojo</span>
+                                <span>Natilla</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$45</p>
+                        </div>
+                    </div>
+
+                    <!-- Postre 3 -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="cheesecake.png" alt="Cheesecake Japones" /> 
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span>
+                            </div>
+                            <h3>Cheesecake Fluffy</h3>
+                            <p class="description-size">Pastel de queso esponjoso estilo Osaka</p>
+                            <div class="sizes">
+                                <span>Rebanada</span>
+                                <span>Completo</span>
+                            </div>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$75</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SECCIÓN: GALERÍA
+                 ========================================== -->
+            <section id="galeria" class="gallery">
+                <h1 class="heading-1 full-width-heading">📸 Galería</h1>
+                <img src="panel.png" alt="Galería de eventos y comida" />
+            </section>
+
+            <!-- ==========================================
+                 SECCIÓN: PAQUETES
+                 ========================================== -->
+            <section id="paquetes" class="container specials">
+                <h1 class="heading-1">🎁 Paquetes Especiales</h1>
+                <div class="container-products">
+                    <!-- Paquete para dos -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="paquete2.png" alt="Paquete Pareja" />
+                            <span class="discount">¡NUEVO!</span>
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-regular">&#9734;</span>
+                            </div>
+                            <h3>Paquete para Dos</h3>
+                            <p class="description-size">2 Ramen Shoyu, 1 Edamame, 2 Bebidas</p>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$25.00 <span>$30.00</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Paquete familiar -->
+                    <div class="card-product">
+                        <div class="container-img">
+                            <img src="paquetefam.png" alt="Paquete Familiar" />
+                            <span class="discount">¡AHORRA!</span>
+                            <div class="button-group">
+                                <span><span class="icon-control">&#128065;</span></span>
+                                <span><span class="icon-control">&#10084;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-card-product">
+                            <div class="stars">
+                                <span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span><span class="star-solid">&#9733;</span>
+                            </div>
+                            <h3>Familiar Sushi</h3>
+                            <p class="description-size">50 pzas de Sushi, 4 Bebidas, 2 Postres</p>
+                            <span class="add-cart"><span class="icon">&#128722;</span></span>
+                            <p class="price">$590 <span>$750</span></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 SECCIÓN: PROMOCIONES
+                 ========================================== -->
+            <section id="promociones" class="container seccion-promociones">
+                <h1 class="heading-1">🏷️ Promociones y Descuentos</h1>
+                <div class="container-promociones">
+                    <div class="card-promocion">
+                        <div class="container-img">
+                            <img src="lunes.png" alt="Cupón 1" />
+                            <div class="button-group-promo">
+                                <span><span class="icon-control">&#128269;</span></span>
+                                <span><span class="icon-control">&#128279;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-promocion">
+                            <h3>Lunes de Sushi 2x1</h3>
+                            <span>Válido hasta fin de mes</span>
+                            <p>Aprovecha nuestro 2x1 en rollos seleccionados todos los lunes al ordenar en línea.</p>
+                            <div class="btn-promo">Ver Cupón</div>
+                        </div>
+                    </div>
+
+                    <div class="card-promocion">
+                        <div class="container-img">
+                            <img src="agua.png" alt="Cupón 2" />
+                            <div class="button-group-promo">
+                                <span><span class="icon-control">&#128269;</span></span>
+                                <span><span class="icon-control">&#128279;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-promocion">
+                            <h3>Bebida Gratis</h3>
+                            <span>Para clientes nuevos</span>
+                            <p>Regístrate y recibe una bebida (refresco o agua) gratis con tu primer pedido.</p>
+                            <div class="btn-promo">Aplicar</div>
+                        </div>
+                    </div>
+
+                    <div class="card-promocion">
+                        <div class="container-img">
+                            <img src="credencial.png" alt="Cupón 3" />
+                            <div class="button-group-promo">
+                                <span><span class="icon-control">&#128269;</span></span>
+                                <span><span class="icon-control">&#128279;</span></span>
+                            </div>
+                        </div>
+                        <div class="content-promocion">
+                            <h3>15% Descuento Estudiantil</h3>
+                            <span>Presenta tu credencial</span>
+                            <p>Disfruta de 15% de descuento mostrando tu credencial de estudiante vigente.</p>
+                            <div class="btn-promo">Detalles</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ==========================================
+             PIE DE PÁGINA (FOOTER)
+             Información de contacto y datos del alumno
+             ========================================== -->
+        <footer class="footer">
+            <div class="container container-footer">
+                <div class="menu-footer">
+                    <div class="contact-info">
+                        <p class="title-footer">Información de Contacto</p>
+                        <ul>
+                            <li>Dirección: Colonia del Sol, Tokio, Japón.</li>
+                            <li>Teléfono: 555-KIOTO-SUSHI</li>
+                            <li>Email: contacto@kyoto-dojo.com</li>
+                            <!-- Datos del alumno requeridos -->
+                            <li class="info-alumno">Alumno: Jose Alberto Nava Rueda</li>
+                            <li class="info-alumno">Materia: Programacion Web 1</li>
+                            <li class="info-alumno">Grupo: 1507</li>
+                        </ul>
+                        <div class="social-icons">
+                            <span class="facebook">FB</span>
+                            <span class="twitter">TW</span>
+                            <span class="youtube">YT</span>
+                            <span class="instagram">IG</span>
+                        </div>
+                    </div>
+
+                    <div class="information">
+                        <p class="title-footer">Legal</p>
+                        <ul>
+                            <li><a href="#">Acerca de Nosotros</a></li>
+                            <li><a href="#">Información Delivery</a></li>
+                            <li><a href="#">Políticas de Privacidad</a></li>
+                            <li><a href="#">Términos y condiciones</a></li>
+                            <li><a href="#">Contáctanos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="my-account">
+                        <p class="title-footer">Mi Cuenta</p>
+                        <ul>
+                            <li><a href="#">Mi cuenta</a></li>
+                            <li><a href="#">Historial de ordenes</a></li>
+                            <li><a href="#">Lista de deseos</a></li>
+                            <li><a href="#">Reembolsos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="newsletter">
+                        <p class="title-footer">Boletín</p>
+                        <div class="content">
+                            <p>Suscríbete para recibir ofertas de ramen y sushi.</p>
+                            <input type="email" placeholder="Correo electrónico..." />
+                            <button type="button">Suscríbete</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="derechos">
+                    <p class="copyright">© Alumno: Jose Alberto Nava Rueda - Programacion Web 1 - Grupo: 1507</p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

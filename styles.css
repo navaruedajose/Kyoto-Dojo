@@ -1,0 +1,974 @@
+/* ==========================================
+   VARIABLES Y CONFIGURACIÓN GLOBAL
+   ========================================== */
+:root {
+    --primary-color: #A52A2A; 
+    --secondary-color: #333333; /* texto */
+    --background-color: #ece7e7; /* Fondo */
+    --light-background: #FFFFFF; /* tarjetas */
+    --dark-color: #151515;
+}
+
+html {
+    font-size: 62.5%; /* Fuente estándar: 1rem = 10px */
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Permite desplazamiento suave entre secciones */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   CLASES DE UTILIDAD
+   ========================================== */
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.heading-1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3.8rem;
+    color: var(--secondary-color);
+    padding: 3rem 0 1rem;
+}
+
+.full-width-heading {
+    grid-column: 1 / -1; 
+}
+
+/* ==========================================
+   ESTILOS DEL ENCABEZADO (HEADER)
+   ========================================== */
+.container-hero {
+    background-color: var(--light-background);
+    border-bottom: 1px solid #eee;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.customer-support {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.customer-support .icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.content-customer-support {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container-logo .icon {
+    font-size: 4rem; 
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.container-logo h1 a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.container-user {
+    display: flex;
+    gap: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+}
+
+.container-user .icon:nth-child(1) { 
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    padding-right: 1.5rem;
+    border-right: 1px solid #ddd;
+}
+
+.container-user .icon:nth-child(2) { 
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+
+.content-shopping-cart {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+.content-shopping-cart .text { color: var(--secondary-color); }
+.content-shopping-cart .number { font-weight: 700; color: var(--primary-color); }
+
+
+/* ==========================================
+   ESTILOS DE LA BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================== */
+.container-navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.navbar .icon {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.menu li {
+    list-style: none;
+    position: relative;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--light-background);
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    display: block;
+}
+
+/* Submenú desplegable */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    min-width: 18rem;
+    z-index: 100;
+    border-top: 3px solid var(--secondary-color);
+}
+.submenu li a {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    text-transform: none;
+}
+.dropdown-menu:hover .submenu {
+    display: block;
+}
+.submenu li a:hover {
+    background-color: var(--secondary-color);
+}
+
+
+.menu a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--light-background);
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 80%;
+}
+
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--light-background);
+    border-radius: 2rem;
+    background-color: var(--light-background);
+    height: 4.4rem;
+    overflow: hidden;
+}
+
+.search-form input {
+    outline: none;
+    font-family: inherit;
+    border: none;
+    width: 20rem;
+    font-size: 1.4rem;
+    padding: 0 1.5rem;
+    color: #777;
+    cursor: pointer;
+}
+
+.search-form .btn-search {
+    border: none;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.btn-search .icon {
+    font-size: 2rem;
+    color: var(--light-background);
+}
+
+/* ==========================================
+   ESTILOS DE LA SECCIÓN PRINCIPAL (BANNER)
+   ========================================== */
+.banner {
+    /* Fondo con gradiente e imagen */
+    background-image: linear-gradient(100deg, #000000dc, #070707b2),
+        url('banner.png'); 
+    height: 80rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.content-banner {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+    text-align: center;
+}
+
+.content-banner p {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.content-banner h2 {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+}
+
+.content-banner a {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--primary-color);
+    display: inline-block;
+    padding: 1.2rem 4rem;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    transition: background-color 0.3s ease;
+}
+
+.content-banner a:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ==========================================
+   ESTILOS DEL CONTENIDO PRINCIPAL
+   ========================================== */
+.main-content {
+    background-color: var(--background-color);
+}
+
+/* Tarjetas de características */
+.container-features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    padding: 5rem 0;
+}
+
+.card-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--light-background);
+    border-radius: 1rem;
+    padding: 2.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-feature .icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature-content span {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+}
+
+.feature-content p {
+    color: #777;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+/* ==========================================
+   ESTILOS DE MENÚ DE COMIDA (PLATOS, BEBIDAS, POSTRES)
+   ========================================== */
+.top-products {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 5rem;
+}
+
+.container-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.container-options span {
+    color: var(--secondary-color);
+    background-color: var(--light-background);
+    padding: 0.8rem 2.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.container-options span:hover,
+.container-options span.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* Grid System para Productos */
+.container-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 3rem;
+}
+
+.card-product {
+    background-color: var(--light-background);
+    padding: 2.5rem;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.container-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.container-img img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    display: block;
+}
+
+.container-img .discount {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 4px 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.card-product:hover .discount {
+    background-color: var(--secondary-color);
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 50%;
+    right: -5rem; 
+    transform: translateY(-50%);
+    z-index: 5;
+    transition: all 0.4s ease;
+}
+
+.button-group span {
+    border: 1px solid var(--primary-color);
+    background-color: var(--light-background);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-group span:hover {
+    background-color: var(--primary-color);
+}
+
+.icon-control {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.button-group span:hover .icon-control {
+    color: #fff;
+}
+
+.card-product:hover .button-group {
+    right: 1.5rem;
+}
+
+.content-card-product {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 1rem;
+    padding-top: 1.5rem;
+}
+
+.stars {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.stars .star-solid,
+.stars .star-regular {
+    font-size: 1.6rem;
+    color: gold; 
+    font-weight: 900; 
+}
+
+.stars .star-regular {
+    color: #ccc; 
+}
+
+.content-card-product h3 {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+.content-card-product h3:hover {
+    color: var(--primary-color);
+}
+
+.description-size {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    font-size: 1.4rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+}
+
+.sizes {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.sizes span {
+    border: 1px solid #ddd;
+    padding: 2px 8px;
+    border-radius: 0.3rem;
+}
+
+.add-cart {
+    grid-row: 5/6;
+    grid-column: 1/2;
+    justify-self: start;
+    border: 2px solid var(--primary-color);
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-cart:hover {
+    background-color: var(--primary-color);
+}
+
+.add-cart .icon {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.add-cart:hover .icon {
+    color: #fff;
+}
+
+.content-card-product .price {
+    grid-row: 5/6;
+    grid-column: 2/3;
+    justify-self: end;
+    align-self: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.content-card-product .price span {
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: line-through;
+    color: #777;
+    margin-left: 0.5rem;
+}
+
+/* ==========================================
+   ESTILOS DE LA GALERÍA
+   ========================================== */
+.gallery {
+    display: block; 
+    height: 70rem; 
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.gallery .heading-1 {
+    padding: 3rem 0 1rem;
+    margin-bottom: 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: calc(100% - 7rem); 
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block; 
+}
+
+.gallery img:hover {
+    transform: scale(1.01); 
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   ESTILOS DE PAQUETES ESPECIALES
+   ========================================== */
+.specials {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 5rem;
+}
+
+/* ==========================================
+   ESTILOS DE PROMOCIONES Y CUPONES
+   ========================================== */
+.seccion-promociones {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 5rem;
+}
+
+.container-promociones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+}
+
+.card-promocion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--light-background);
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 2rem;
+}
+
+.card-promocion .container-img {
+    border-radius: 0.8rem 0.8rem 0 0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-promocion .container-img img {
+    height: 25rem;
+    object-fit: cover;
+}
+
+.button-group-promo {
+    position: absolute;
+    bottom: 1.5rem;
+    right: -2.5rem;
+    display: flex;
+    gap: 0.7rem;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+.card-promocion:hover .button-group-promo {
+    right: 1.5rem;
+}
+
+.button-group-promo span {
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-group-promo span .icon-control {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.button-group-promo span:hover {
+    background-color: var(--primary-color);
+}
+
+.button-group-promo span:hover .icon-control {
+    color: #fff;
+}
+
+.content-promocion {
+    padding: 0 2rem;
+}
+
+.content-promocion h3 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.content-promocion h3:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.content-promocion p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.content-promocion span {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.btn-promo {
+    padding: 1.2rem 3rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0 0;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-promo:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ==========================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================== */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--light-background);
+    padding-top: 4rem;
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 3rem 0;
+}
+
+.menu-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 30rem;
+    gap: 3rem;
+    justify-items: start;
+    padding: 0 2rem;
+}
+
+.title-footer {
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info ul,
+.information ul,
+.my-account ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+}
+
+.contact-info ul li,
+.information ul li,
+.my-account ul li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.information ul li a,
+.my-account ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+    transition: color 0.3s ease;
+}
+
+.information ul li a:hover,
+.my-account ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.social-icons span {
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+.social-icons span:hover {
+    opacity: 0.8;
+}
+
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #00acee; }
+.youtube { background-color: #c4302b; }
+.instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #405de6 90%); }
+
+.content p {
+    font-size: 1.5rem;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.content input {
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem 0 1.2rem;
+    color: #fff;
+    display: block;
+    margin-bottom: 2.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.5rem;
+}
+
+.content input::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.content button {
+    border: none;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-transform: uppercase;
+    padding: 1.2rem 3rem;
+    border-radius: 0.5rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.content button:hover {
+    background-color: var(--light-background);
+    color: var(--primary-color);
+}
+
+.derechos {
+    border-top: 1px solid #444;
+    padding: 2rem 2rem 0;
+    text-align: center;
+}
+
+.derechos .copyright {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #888;
+}
+
+/* Estilo para los datos del alumno */
+.info-alumno {
+    color: #aaa !important;
+    margin-top: 1.5rem;
+    font-size: 1.2rem !important;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+
+    .hero {
+        padding: 1.5rem 2rem;
+    }
+
+    .customer-support {
+        display: none;
+    }
+
+    .content-shopping-cart {
+        display: none;
+    }
+
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .navbar .icon { 
+        display: block;
+        font-size: 3.5rem;
+    }
+
+    .menu {
+        display: none; 
+    }
+    
+    .search-form {
+        display: none;
+    }
+
+    .content-banner {
+        padding: 20rem 2rem;
+    }
+
+    .content-banner h2 {
+        font-size: 4rem;
+    }
+
+    .container-features {
+        grid-template-columns: 1fr;
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+
+    .heading-1 {
+        font-size: 3rem;
+    }
+
+    .container-products {
+        grid-template-columns: 1fr;
+        padding: 0 2rem;
+        gap: 4rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 0 2rem;
+        gap: 1.5rem;
+    }
+    
+    .menu-footer {
+        grid-template-columns: 1fr;
+        padding: 0 2rem;
+        justify-items: stretch;
+        text-align: center;
+    }
+    .contact-info, .information, .my-account, .newsletter {
+        align-items: center;
+    }
+    .contact-info ul, .information ul, .my-account ul {
+        text-align: center;
+    }
+}
